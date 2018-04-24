@@ -1,0 +1,187 @@
+﻿<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Aplikacja internetowa do prowadzenia budżetu osobistego, która pomaga w zapanowaniu nad wydatkami. Dzięki niej zaoszczędzisz pieniądze, by następnie móc spełniać marzenia :)" />
+	<meta name="keywords" content="budżet, pieniądze, wydatki, pieniądze, dochód, rozliczenie, kontrola budżetu, portfel, przychód, oszczędzanie, bilans, płatności, budżet osobisty" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge" />	
+	
+		<title>Budżet osobisty - rejestracja</title>
+	
+	<link href="style.css"  type="text/css"  rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet"  href="css/fontello.css" type="text/css"/>
+	
+	<script type="text/javascript">
+		
+		function ustawDate()
+		{
+		var dzisiaj = new Date();	
+		var dzien = dzisiaj.getDate();
+		var miesiac = dzisiaj.getMonth()+1;
+		var  rok = dzisiaj.getFullYear();
+		
+		if(miesiac<10) miesiac = "0" + miesiac;
+		if(dzien<10) dzien = "0" + dzien;
+		
+		document.getElementById("pobieranieDaty").value = rok + "-" + miesiac + "-" + dzien;
+		}
+	</script>
+
+</head>
+
+<body onload="ustawDate();">
+
+	<div id="container">
+		<header>
+			<div class="rectangle">
+				<div id="logo">BUDŻET<i class="icon-wallet"></i>osobisty</div>
+				<div id="logowanie">
+					<input type="submit" value="Wyloguj">
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</header>
+		
+		<div id="srodek">
+			<nav>
+				<div class="menu">
+					<ul>
+						<li><a href="#">Dodaj przychód</a></li>
+						<li><a href="dodajWydatek.html">Dodaj wydatek</a></li>
+						<li><a href="przeglądajBilans.html">Przeglądaj bilans</a></li>
+						<li><a href="#">Ustawienia</a></li>
+					</ul>
+				</div>
+			</nav>
+			<main>
+				<div id="pojemnikNaTabele">
+					<div id="naglowekTabeli">
+						Dodaj wydatek
+					</div>
+					<table id="tabela">
+						<tr>
+							<td>
+								<div class="atrybuty">
+									Kwota:
+								</div>
+							</td>
+							<td>
+							<input class="pobieranieKwoty" type="text">PLN
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="atrybuty">
+									Data:
+								</div>
+							</td>
+							<td>
+								<input id="pobieranieDaty" type="date" value="" >
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="atrybuty">
+									Sposób płatności:
+								</div>
+							</td>
+							<td>
+								<div class="opcja">
+									<input type="radio" name="platnosc">Gotówka
+								</div>
+								<div class="opcja">
+									<input type="radio" name="platnosc">Karta debetowa
+								</div>
+								<div class="opcja">
+									<input type="radio" name="platnosc">Karta kredytowa
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="atrybuty">
+									Kategoria:
+								</div>
+							</td>
+							<td>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Jedzenie
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Mieszkanie
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Transport
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Telekomunikacja
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Opieka zdrowotna
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Ubranie
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Higiena
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Dzieci
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Rozrywka
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Wycieczka
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Szkolenia
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Książki
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Oszczędności
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Na złotą jesień, czyli emeryturę
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Spłata długów
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Darowizna
+								</div>
+								<div class="opcja">
+									<input type="radio" name="kategoria">Inne wydatki
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="atrybuty">
+									Komentarz (opcjonalnie)
+								</div>
+									
+							</td>
+							<td>
+								<input class="pobieranieKomentarza" type="text">
+							</td>
+						</tr>
+					</table>
+					<div class="przyciski">
+						<input type="submit" id="dodaj" value="Dodaj">
+						<input type="submit" id="anuluj" value="Anuluj">
+					</div>
+				</div>
+				<div style="clear:both"></div>
+			</main>
+		</div>	
+			
+	</div>
+
+</body>
+
+</html>
